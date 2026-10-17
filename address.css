@@ -1,0 +1,236 @@
+:root {
+  --primary: #ff7a18;
+  --primary-strong: #ff4d00;
+  --soft: #f5f5f5;
+  --muted: #dfe7ee;
+  --shadow: rgba(0, 0, 0, 0.32);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--soft);
+  background:
+    linear-gradient(135deg, rgba(12, 20, 26, 0.9), rgba(37, 58, 62, 0.7)),
+    url('/img/poultary 3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.page-shell {
+  width: min(1200px, calc(100% - 32px));
+  margin: 24px auto;
+}
+
+.glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 18px 40px var(--shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 26px;
+  position: sticky;
+  top: 16px;
+  z-index: 20;
+  background: linear-gradient(135deg, rgba(19, 27, 34, 0.9), rgba(255, 122, 24, 0.08));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.24);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.logo {
+  width: 86px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.brand-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  padding: 0.3rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-links a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--soft);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.72rem 1.05rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.nav-links a:hover::before {
+  transform: translateX(120%);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(255, 122, 24, 0.28);
+}
+
+.container {
+  padding-top: 2rem;
+}
+
+.hero {
+  padding: 2rem;
+  border-radius: 28px;
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.76rem;
+  color: #ffd9b8;
+}
+
+.hero h1 {
+  margin: 0 0 0.8rem;
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  line-height: 1.1;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.list-section {
+  padding: 1.5rem;
+  border-radius: 26px;
+  margin-bottom: 2rem;
+}
+
+.list-section h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.hatchery-list {
+  list-style: decimal;
+  margin: 0 auto;
+  padding-left: 1.4rem;
+  max-width: 900px;
+}
+
+.hatchery-list li {
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ha {
+  color: #ffd166;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.ha:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.4rem 1rem;
+  border-radius: 18px;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 20px, 1200px);
+  }
+
+  .topbar {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+
+  .nav-links a {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .hero,
+  .list-section {
+    padding: 1.2rem 1rem;
+  }
+}

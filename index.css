@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+Canada+Guides&display=swap');
+
+:root {
+  --bg-dark: #0f1720;
+  --panel-dark: rgba(15, 23, 32, 0.72);
+  --panel-light: rgba(255, 255, 255, 0.08);
+  --primary: #ff7a18;
+  --primary-strong: #ff4d00;
+  --soft: #f5f5f5;
+  --muted: #dfe7ee;
+  --shadow: rgba(0, 0, 0, 0.32);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--soft);
+  background:
+    linear-gradient(135deg, rgba(12, 20, 26, 0.9), rgba(37, 58, 62, 0.7)),
+    url('/img/poultary 3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.page-shell {
+  width: min(1200px, calc(100% - 32px));
+  margin: 24px auto;
+}
+
+.glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 18px 40px var(--shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 26px;
+  position: sticky;
+  top: 16px;
+  z-index: 20;
+  background: linear-gradient(135deg, rgba(19, 27, 34, 0.9), rgba(255, 122, 24, 0.08));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.24);
+  transform: perspective(900px) rotateX(6deg);
+  animation: headerFloat 5s ease-in-out infinite;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.logo {
+  width: 86px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  animation: logoGlow 3s ease-in-out infinite;
+}
+
+.brand-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  animation: textPulse 3s ease-in-out infinite;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  padding: 0.3rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-links a,
+.primary-btn,
+.secondary-btn {
+  color: var(--soft);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-links a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1.05rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.nav-links a:hover::before {
+  transform: translateX(120%);
+}
+
+.nav-links a:hover,
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(255, 122, 24, 0.28);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.nav-links a.active {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 8px 20px rgba(255, 122, 24, 0.26);
+}
+
+.container {
+  padding-top: 2rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 30px;
+  margin-bottom: 2rem;
+  transform: perspective(1200px) rotateX(4deg);
+}
+
+.eyebrow {
+  margin: 0 0 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: #ffd9b8;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Playwrite Canada Guides", cursive;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+
+.lead {
+  max-width: 560px;
+  margin: 1rem 0 1.5rem;
+  font-size: 1.08rem;
+  color: var(--muted);
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.4rem;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  transform-style: preserve-3d;
+}
+
+.hero-image {
+  width: min(500px, 92%);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.4));
+  transform: translateZ(30px) rotateY(-12deg);
+}
+
+.floating-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 0.7rem 1rem;
+  font-weight: 700;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.card-top {
+  top: 20px;
+  left: 20px;
+  transform: translateZ(40px);
+}
+
+.card-bottom {
+  right: 18px;
+  bottom: 30px;
+  transform: translateZ(40px);
+}
+
+.facts {
+  padding: 1.5rem 1.25rem;
+  border-radius: 26px;
+  margin-bottom: 2rem;
+}
+
+.facts h2 {
+  margin-top: 0;
+  font-size: 1.9rem;
+  text-align: center;
+}
+
+.facts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 820px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.8rem 1.2rem;
+}
+
+.facts li {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.image-block {
+  border-radius: 24px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.image-block:hover {
+  transform: translateY(-5px) rotateX(3deg);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+.image-block img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 0.9rem;
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.2);
+}
+
+.image-block h3 {
+  margin: 0 0 0.4rem;
+  color: #fff;
+}
+
+.image-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--muted);
+}
+
+.large {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.large img {
+  width: 100%;
+  height: 760px;
+  object-fit: cover;
+}
+
+.footer {
+  padding: 1.4rem 1rem;
+  text-align: center;
+  border-radius: 18px;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+@keyframes headerFloat {
+  0%,
+  100% {
+    transform: perspective(900px) rotateX(6deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(900px) rotateX(6deg) translateY(-4px);
+  }
+}
+
+@keyframes logoGlow {
+  0%,
+  100% {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  }
+  50% {
+    box-shadow: 0 16px 34px rgba(255, 122, 24, 0.45);
+  }
+}
+
+@keyframes textPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-row {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 20px, 1200px);
+  }
+
+  .topbar {
+    flex-direction: column;
+    justify-content: center;
+    transform: none;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+
+  .nav-links a {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .hero,
+  .facts {
+    padding: 1.2rem 1rem;
+  }
+}
